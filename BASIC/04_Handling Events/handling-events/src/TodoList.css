@@ -1,0 +1,36 @@
+/* Author: Manuela Cortés Granados
+   Location: Bogotá DC, Colombia
+   Date: March 7, 2024
+   Time: 11:28 AM (GMT-5:00)
+*/
+
+.todo-list {
+    margin-top: 20px;
+  }
+  
+  .todo-list input[type="text"] {
+    margin-right: 10px;
+  }
+  
+  .todo-list button {
+    margin-left: 10px;
+  }
+  
+  .todo-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-list li {
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+  }
+  
+  .todo-list .completed {
+    text-decoration: line-through;
+  }
+  
+  
