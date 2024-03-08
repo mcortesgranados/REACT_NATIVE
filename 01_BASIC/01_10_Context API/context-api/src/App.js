@@ -12,7 +12,6 @@ function App() {
       <div className="App">
         {/* Rendering the ThemeSwitcher component */}
         <ThemeSwitcher />
-        {/* Add other components here */}
       </div>
     </ThemeProvider>
   );
