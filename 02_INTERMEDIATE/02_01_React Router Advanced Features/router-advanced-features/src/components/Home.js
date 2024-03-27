@@ -1,4 +1,3 @@
-// Home.js
 // Author: Manuela Cortés Granados
 // Location: Bogotá DC, Colombia
 // Date: March 8, 2024

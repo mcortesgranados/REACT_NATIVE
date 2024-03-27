@@ -8,7 +8,35 @@ import React, { useState } from 'react'; // Importing React and useState hook
 import './TodoList.css'; // Proposed Name: TodoList.css, Importing CSS file for styling
 
 function TodoList() { // TodoList component declaration
+  
+  /*
+  _____________________________________________________________________________________________________________
+  const [tasks, setTasks] = useState([]);
+  const: This keyword is used to declare a constant variable named tasks and setTasks. Once initialized, the
+   reference to the variable cannot be changed.
+  
+  [tasks, setTasks]: 
+  This is array destructuring syntax. It's used to unpack the values from an array or properties from an object, into distinct variables. In this case, it's extracting two values from the array returned by useState.
+  
+  tasks: This represents the current state value, which is initially set to an empty array []. It holds the array of tasks.
+  
+  setTasks: This is the setter function provided by React's useState hook. It allows you to update the state variable tasks. When invoked with a new
+   value, it will trigger a re-render of the component with the updated state.
+  
+  useState([]): This is a React Hook that allows functional components to manage state. It initializes the state variable tasks with an initial value 
+  of an empty array []. The argument [] passed to useState represents the initial state value.
+  
+  // State for tasks array and setter function: This is a comment explaining the purpose of the useState hook in this context. It clarifies that tasks 
+  is used to store an array of tasks, and setTasks is the function used to update this array. Comments like these help in understanding the codebase, 
+  especially for developers who might be new to the code or revisiting it after some time.
+  _____________________________________________________________________________________________________________
+  
+  */
   const [tasks, setTasks] = useState([]); // State for tasks array and setter function
+  //_____________________________________________________________________________________________________________
+  
+
+  
   const [newTask, setNewTask] = useState(''); // State for newTask input and setter function
 
   const handleAddTask = () => { // Function to handle adding a new task
