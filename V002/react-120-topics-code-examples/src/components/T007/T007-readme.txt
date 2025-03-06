@@ -34,3 +34,4 @@ Legacy React applications that predate Hooks
 Dashboards where widgets update dynamically
 Forms with multiple steps that track user input
 Interactive UI components like counters, sliders, and toggles
+
