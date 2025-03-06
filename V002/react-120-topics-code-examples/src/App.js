@@ -6,6 +6,8 @@ import "./App.css";
 
 // Import the HelloWorldFunctional component from the specified directory
 import HelloWorldFunctional from "./components/T001/HelloWorldFunctional";
+import FunctionalComponentExample from "./components/T002/FunctionalComponentExample";
+
 
 /**
  * The main application component that serves as the root of the React app.
@@ -25,6 +27,7 @@ function App() {
 
         {/* Render the HelloWorldFunctional component with a name prop */}
         <HelloWorldFunctional name="Manuela Cortés Granados" />
+        <FunctionalComponentExample name="Manuela Cortés Granados" />
 
         {/* Link to the official React documentation with security attributes */}
         <a
