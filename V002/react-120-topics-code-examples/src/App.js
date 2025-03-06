@@ -14,6 +14,8 @@ import T007_Counter from "./components/T007/T007_Counter "; // Importing class-b
 import T008_Counter from "./components/T008/T008_Counter"; // Importing class-based Counter component
 import ButtonClick from "./components/T009/ButtonClick"; // Importing functional component
 import ClickEventClass from "./components/T009/ClickEventClass"; // Importing class component
+import ConditionalRendering from "./components/T010/ConditionalRendering"; // Functional Component
+import ConditionalRenderingClass from "./components/T010/ConditionalRenderingClass"; // Class Component
 
 
 /**
@@ -54,9 +56,12 @@ function App() {
         <h1>T008 useState Hook	A Hook that enables state management inside functional components.</h1>
         <T008_Counter /> {/* Counter component with internal state */}
         <T008_Counter /> {/* Each Counter has its own independent state */}
-        <h1>9	Handling Click Events	Using `onClick` event handlers to trigger functions when a user interacts with an element.</h1>
-      <ButtonClick />
+        <h1>T009	Handling Click Events	Using `onClick` event handlers to trigger functions when a user interacts with an element.</h1>
+        <ButtonClick />
       <ClickEventClass />
+      <h1>10	Conditional Rendering	Using JavaScript expressions (`if`, ternary operators) to show or hide UI elements dynamically.</h1>
+      <ConditionalRendering />
+      <ConditionalRenderingClass />
         {/* Link to the official React documentation with security attributes */}
         <a
           className="App-link"
