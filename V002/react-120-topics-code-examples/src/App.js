@@ -6,10 +6,11 @@ import "./App.css";
 
 // Import the HelloWorldFunctional component from the specified directory
 import HelloWorldFunctional from "./components/T001/HelloWorldFunctional";
-import FunctionalComponentExample from "./components/T002/FunctionalComponentExample";
+import FunctionalComponentExample from "./components/T003/FunctionalComponentExample";
 import Counter from "./components/T004/Counter";  // Import the class component
 import UserCard from "./components/T005/UserCard";  // Importing the child component
 import UserCard2 from "./components/T006/UserCard2"; // Importing the class-based component
+import T007_Counter from "./components/T007/T007_Counter "; // Importing class-based Counter component
 
 
 
@@ -45,7 +46,9 @@ function App() {
         <UserCard2 name="Bob Smith" age={34} email="bob@example.com" />
         <UserCard2 name="Charlie Brown" age={22} email="charlie@example.com" />
         <UserCard2 /> {/* Uses default props */}
-
+      <h1>T007 State in Class Components</h1>
+        <T007_Counter /> {/* Counter component with internal state */}
+        <T007_Counter /> {/* Each Counter has its own independent state */}
 
         {/* Link to the official React documentation with security attributes */}
         <a
