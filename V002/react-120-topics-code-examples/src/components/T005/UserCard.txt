@@ -1,0 +1,22 @@
+### 🔍 **Technical Concepts Explained**  
+
+✅ **Functional Component**  
+📌 `UserCard` is a **stateless** functional component that receives `props` and renders UI accordingly.  
+
+✅ **Props (`{ name, age, email }`)**  
+📌 Props allow passing data from a **parent component** (`App.js`) to a **child component** (`UserCard.js`).  
+📌 The **destructuring syntax** `{ name, age, email }` extracts properties directly from `props`.  
+
+✅ **JSX Rendering**  
+📌 `{name}`, `{age}`, and `{email}` dynamically **insert values** from props into the component.  
+
+✅ **Default Props (`UserCard.defaultProps`)**  
+📌 Ensures the component displays **meaningful fallback data** when props are missing.  
+
+✅ **Inline Styles (`const styles`)**  
+📌 Defines **CSS styles** inside a **JavaScript object** and applies them using the `style` attribute.  
+
+✅ **Component Export (`export default UserCard`)**  
+📌 Enables the component to be **imported** and **used** in other files.  
+
+🚀 This makes the component **reusable, maintainable, and scalable**!
