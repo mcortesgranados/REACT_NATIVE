@@ -19,6 +19,8 @@ import ConditionalRenderingClass from "./components/T010/ConditionalRenderingCla
 import ListExample from "./components/T011/ListExample"; // Functional Component
 import ListExampleClass from "./components/T011/ListExampleClass"; // Class Component
 import FetchingListExample from ".//components/T011/FetchingListExample"; // API Fetching Component
+import UserRegistrationForm from "./components/T012/UserRegistrationForm";
+
 
 /**
  * The main application component that serves as the root of the React app.
@@ -68,6 +70,9 @@ function App() {
       <ListExample />
       <ListExampleClass />
       <FetchingListExample />
+      <h1>12	Forms and Controlled Components	Handling form inputs where the React state controls the values.</h1>
+      <UserRegistrationForm />
+
         {/* Link to the official React documentation with security attributes */}
         <a
           className="App-link"
