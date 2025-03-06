@@ -7,6 +7,8 @@ import "./App.css";
 // Import the HelloWorldFunctional component from the specified directory
 import HelloWorldFunctional from "./components/T001/HelloWorldFunctional";
 import FunctionalComponentExample from "./components/T002/FunctionalComponentExample";
+import Counter from "./components/T004/Counter";  // Import the class component
+
 
 
 /**
@@ -28,6 +30,8 @@ function App() {
         {/* Render the HelloWorldFunctional component with a name prop */}
         <HelloWorldFunctional name="Manuela Cortés Granados" />
         <FunctionalComponentExample name="Manuela Cortés Granados" />
+        <Counter />
+
 
         {/* Link to the official React documentation with security attributes */}
         <a
