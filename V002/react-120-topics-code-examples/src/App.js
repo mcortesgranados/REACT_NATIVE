@@ -12,7 +12,8 @@ import UserCard from "./components/T005/UserCard";  // Importing the child compo
 import UserCard2 from "./components/T006/UserCard2"; // Importing the class-based component
 import T007_Counter from "./components/T007/T007_Counter "; // Importing class-based Counter component
 import T008_Counter from "./components/T008/T008_Counter"; // Importing class-based Counter component
-
+import ButtonClick from "./components/T009/ButtonClick"; // Importing functional component
+import ClickEventClass from "./components/T009/ClickEventClass"; // Importing class component
 
 
 /**
@@ -53,7 +54,9 @@ function App() {
         <h1>T008 useState Hook	A Hook that enables state management inside functional components.</h1>
         <T008_Counter /> {/* Counter component with internal state */}
         <T008_Counter /> {/* Each Counter has its own independent state */}
-
+        <h1>9	Handling Click Events	Using `onClick` event handlers to trigger functions when a user interacts with an element.</h1>
+      <ButtonClick />
+      <ClickEventClass />
         {/* Link to the official React documentation with security attributes */}
         <a
           className="App-link"
