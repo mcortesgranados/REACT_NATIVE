@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React Class Components</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    .style1 {font-family: Arial, Helvetica, sans-serif}
+    </style>
+</head>
+<body>
+    <h2 class="style1">React Class Components</h2>
+    <table>
+        <tr>
+            <th class="style1">ID</th>
+            <th class="style1">Type</th>
+            <th class="style1">Description</th>
+            <th class="style1">Features</th>
+            <th class="style1">Usage</th>
+        </tr>
+        <tr>
+            <td class="style1">4</td>
+            <td class="style1">Class Components</td>
+            <td class="style1">ES6 class-based components extending <code>React.Component</code>, allowing lifecycle methods.</td>
+            <td class="style1">
+                <ul>
+                    <li>Supports lifecycle methods like <code>componentDidMount()</code></li>
+                    <li>Can handle state without Hooks</li>
+                    <li>Useful for complex logic</li>
+                </ul>            </td>
+            <td class="style1">Common in legacy React applications before the introduction of Hooks.</td>
+        </tr>
+    </table>
+    
+    <h2 class="style1">✔️ How It Works</h2>
+    <h3 class="style1">Mounting Phase:</h3>
+    <p class="style1"><code>componentDidMount()</code> runs after the component is added to the DOM.<br>
+    Prints: "✅ Counter component mounted!"</p>
+    
+    <h3 class="style1">Updating Phase:</h3>
+    <p class="style1">When you click Increment, <code>this.setState()</code> updates <code>count</code>, triggering render().<br>
+    <code>componentDidUpdate()</code> runs after every update, logging "🔄 Counter updated! New count: X".</p>
+    
+    <h3 class="style1">Unmounting Phase:</h3>
+    <p class="style1">If Counter is removed from <code>App.js</code>, <code>componentWillUnmount()</code> runs, logging "❌ Counter component will unmount!".</p>
+    
+    <h2 class="style1">✔️ Why Use Class Components?</h2>
+    <table>
+        <tr>
+            <th class="style1">Feature</th>
+            <th class="style1">Class Components (<code>React.Component</code>)</th>
+        </tr>
+        <tr>
+            <td class="style1">Lifecycle Methods</td>
+            <td class="style1">✅ Supports <code>componentDidMount</code>, <code>componentDidUpdate</code>, etc.</td>
+        </tr>
+        <tr>
+            <td class="style1">State Management</td>
+            <td class="style1">✅ Uses <code>this.state</code> and <code>this.setState()</code></td>
+        </tr>
+        <tr>
+            <td class="style1">Props</td>
+            <td class="style1">✅ Accessed via <code>this.props</code></td>
+        </tr>
+        <tr>
+            <td class="style1">Code Complexity</td>
+            <td class="style1">⚠️ More boilerplate than functional components</td>
+        </tr>
+        <tr>
+            <td class="style1">Recommended for New Code?</td>
+            <td class="style1">❌ No, functional components with Hooks (<code>useState</code>, <code>useEffect</code>) are preferred</td>
+        </tr>
+    </table>
+    
+    <h2 class="style1">🚀 Real-World Usage of Class Components</h2>
+    <p class="style1">Although functional components with Hooks are the modern standard, class components are still used in:</p>
+    <ul class="style1">
+        <li>Legacy React projects (pre-React 16.8)</li>
+        <li>Complex applications requiring lifecycle control</li>
+        <li>Component libraries that still use class-based patterns</li>
+    </ul>
+</body>
+</html>
