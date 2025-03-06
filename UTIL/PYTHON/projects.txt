@@ -1,0 +1,2 @@
+K:\REACT_NATIVE\01_BASIC\01_01_Rendering Components\rendering-components
+K:\REACT_NATIVE\01_BASIC\01_03_State Management\state-management

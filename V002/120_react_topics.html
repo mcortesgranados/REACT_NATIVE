@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Topics - Set 1</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #d6e9ff;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    .style1 {font-family: Arial, Helvetica, sans-serif}
+    </style></head>
+<body>
+
+<h1 class="style1">React Topics - Set 1</h1>
+
+<table>
+    <tr>
+        <th class="style1">#</th>
+        <th class="style1">Topic</th>
+        <th class="style1">Description</th>
+        <th class="style1">Advantages</th>
+        <th class="style1">Real-World Scope</th>
+    </tr>
+    
+    <tr>
+        <td class="style1">1</td>
+        <td class="style1">Hello World in React</td>
+        <td class="style1">Basic setup of a React app using `ReactDOM.render()` or `createRoot()` to mount an element into the DOM.</td>
+        <td class="style1">- Quick setup<br>- Foundation for all React applications<br>- Helps beginners understand component-based architecture</td>
+        <td class="style1">Used to kickstart any React project and ensure dependencies are correctly installed.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">2</td>
+        <td class="style1">JSX Syntax</td>
+        <td class="style1">JSX (JavaScript XML) allows writing HTML-like code inside JavaScript, which React transpiles into `React.createElement()` calls.</td>
+        <td class="style1">- Improves code readability<br>- Allows embedding expressions with `{}`<br>- Prevents injection attacks by escaping values</td>
+        <td class="style1">Used in every React component to define UI structures in a clean and declarative way.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">3</td>
+        <td class="style1">Functional Components</td>
+        <td class="style1">Stateless components written as JavaScript functions that return JSX.</td>
+        <td class="style1">- Simple and readable<br>- Easier to test and reuse<br>- Works well with Hooks</td>
+        <td class="style1">Ideal for UI components like buttons, headers, and reusable widgets.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">4</td>
+        <td class="style1">Class Components</td>
+        <td class="style1">ES6 class-based components extending `React.Component`, allowing lifecycle methods.</td>
+        <td class="style1">- Supports lifecycle methods like `componentDidMount()`<br>- Can handle state without Hooks<br>- Useful for complex logic</td>
+        <td class="style1">Common in legacy React applications before the introduction of Hooks.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">5</td>
+        <td class="style1">Props in Functional Components</td>
+        <td class="style1">Props (short for properties) are read-only arguments passed from parent to child components.</td>
+        <td class="style1">- Enables component reusability<br>- Helps maintain a unidirectional data flow<br>- Simplifies UI updates</td>
+        <td class="style1">Used for passing data like user profiles, settings, or dynamic content to components.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">6</td>
+        <td class="style1">Props in Class Components</td>
+        <td class="style1">Similar to functional props but accessed using `this.props`.</td>
+        <td class="style1">- Supports prop validation with PropTypes<br>- Works with lifecycle methods<br>- Enables structured data passing</td>
+        <td class="style1">Useful in older applications that require class-based components with state.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">7</td>
+        <td class="style1">State in Class Components</td>
+        <td class="style1">Component state is stored in `this.state` and updated with `this.setState()`.</td>
+        <td class="style1">- Allows dynamic UI updates<br>- Supports complex state management<br>- Enables component reactivity</td>
+        <td class="style1">Common in older React applications where state management was required before Hooks.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">8</td>
+        <td class="style1">useState Hook</td>
+        <td class="style1">A Hook that enables state management inside functional components.</td>
+        <td class="style1">- Simplifies state handling<br>- Reduces the need for class components<br>- Improves code maintainability</td>
+        <td class="style1">Used in almost all modern React applications to handle UI state.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">9</td>
+        <td class="style1">Handling Click Events</td>
+        <td class="style1">Using `onClick` event handlers to trigger functions when a user interacts with an element.</td>
+        <td class="style1">- Enables interactive UIs<br>- Improves user experience<br>- Allows dynamic event handling</td>
+        <td class="style1">Common in buttons, links, and user interactions like forms and modals.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">10</td>
+        <td class="style1">Conditional Rendering</td>
+        <td class="style1">Using JavaScript expressions (`if`, ternary operators) to show or hide UI elements dynamically.</td>
+        <td class="style1">- Improves performance by rendering only necessary elements<br>- Reduces unnecessary DOM updates<br>- Allows flexible UI logic</td>
+        <td class="style1">Used in dashboards, login pages, and error messages where UI visibility depends on state.</td>
+    </tr>
+        <tr>
+        <td class="style1">11</td>
+        <td class="style1">Lists and Keys</td>
+        <td class="style1">Rendering lists using `.map()` and assigning unique keys for optimized performance.</td>
+        <td class="style1">- Improves rendering efficiency<br>- Prevents unnecessary re-renders<br>- Enhances performance in dynamic lists</td>
+        <td class="style1">Used in displaying lists like product catalogs, user comments, and dynamic menus.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">12</td>
+        <td class="style1">Forms and Controlled Components</td>
+        <td class="style1">Handling form inputs where the React state controls the values.</td>
+        <td class="style1">- Provides real-time validation<br>- Enables centralized state management<br>- Improves form behavior consistency</td>
+        <td class="style1">Used in login forms, user registrations, and data input fields.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">13</td>
+        <td class="style1">Uncontrolled Components</td>
+        <td class="style1">Forms that rely on the DOM instead of React state for managing values.</td>
+        <td class="style1">- Simpler setup for non-interactive forms<br>- Reduces state management complexity<br>- Works well with third-party libraries</td>
+        <td class="style1">Useful in file uploads, third-party form integrations, and legacy form handling.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">14</td>
+        <td class="style1">Component Lifecycle Methods</td>
+        <td class="style1">Class component lifecycle methods like `componentDidMount()`, `shouldComponentUpdate()`, and `componentWillUnmount()`.</td>
+        <td class="style1">- Allows precise control over component behavior<br>- Optimizes performance by preventing unnecessary renders<br>- Helps in managing side effects</td>
+        <td class="style1">Commonly used for API calls, subscriptions, and resource cleanup.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">15</td>
+        <td class="style1">useEffect Hook</td>
+        <td class="style1">Hook for handling side effects in functional components, replacing lifecycle methods.</td>
+        <td class="style1">- Reduces boilerplate code<br>- Allows better dependency management<br>- Handles component mounting, updating, and unmounting</td>
+        <td class="style1">Used for API calls, setting up subscriptions, and handling cleanup tasks.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">16</td>
+        <td class="style1">React Fragments</td>
+        <td class="style1">Used to group multiple elements without adding extra DOM nodes.</td>
+        <td class="style1">- Improves DOM performance<br>- Reduces unnecessary HTML elements<br>- Keeps the structure clean</td>
+        <td class="style1">Useful in rendering multiple sibling elements without additional `div` wrappers.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">17</td>
+        <td class="style1">React Portals</td>
+        <td class="style1">Renders a component outside its parent DOM hierarchy using `ReactDOM.createPortal()`.</td>
+        <td class="style1">- Allows rendering modal dialogs, tooltips, and popups without affecting parent styles<br>- Improves accessibility and structure<br>- Helps manage overlays effectively</td>
+        <td class="style1">Commonly used for modals, popups, and notifications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">18</td>
+        <td class="style1">Handling Events</td>
+        <td class="style1">Binding event handlers in JSX and passing event objects to functions.</td>
+        <td class="style1">- Enables dynamic user interactions<br>- Provides control over event propagation<br>- Allows passing parameters with event handlers</td>
+        <td class="style1">Used in button clicks, form submissions, and keyboard interactions.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">19</td>
+        <td class="style1">React Context API</td>
+        <td class="style1">Provides a way to pass data through the component tree without using props drilling.</td>
+        <td class="style1">- Reduces prop drilling issues<br>- Centralizes state for better organization<br>- Improves reusability across deeply nested components</td>
+        <td class="style1">Used for managing authentication, theme settings, and global application states.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">20</td>
+        <td class="style1">React Refs</td>
+        <td class="style1">Allows direct access to a DOM element or component instance using `useRef` or `createRef()`.</td>
+        <td class="style1">- Enables manipulating DOM elements directly<br>- Useful for focusing input fields<br>- Helps in integrating third-party libraries</td>
+        <td class="style1">Used in handling focus, animations, and accessing child component methods.</td>
+    </tr>
+        <tr>
+        <td class="style1">21</td>
+        <td class="style1">useState Hook</td>
+        <td class="style1">Manages local component state in functional components.</td>
+        <td class="style1">- Simplifies state management<br>- Provides an easy way to update the UI dynamically<br>- Helps in controlling component behavior efficiently</td>
+        <td class="style1">Used in form handling, toggles, counters, and UI updates.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">22</td>
+        <td class="style1">useReducer Hook</td>
+        <td class="style1">Alternative to `useState` for complex state logic in components.</td>
+        <td class="style1">- Suitable for managing global states<br>- Improves code maintainability with reducer functions<br>- Works well with Context API</td>
+        <td class="style1">Used in handling authentication states, managing forms, and state transitions.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">23</td>
+        <td class="style1">React Router</td>
+        <td class="style1">Enables navigation in React applications using `react-router-dom`.</td>
+        <td class="style1">- Allows client-side routing<br>- Enables dynamic and nested routes<br>- Supports route parameters and query strings</td>
+        <td class="style1">Used in single-page applications (SPAs) for managing multiple views without reloading.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">24</td>
+        <td class="style1">Lazy Loading and Suspense</td>
+        <td class="style1">Improves performance by loading components only when needed.</td>
+        <td class="style1">- Reduces initial load time<br>- Improves application speed<br>- Enhances user experience by loading only necessary parts</td>
+        <td class="style1">Used in large applications for loading pages, dashboards, or images asynchronously.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">25</td>
+        <td class="style1">Error Boundaries</td>
+        <td class="style1">Special React components that catch JavaScript errors in the component tree.</td>
+        <td class="style1">- Prevents entire app crashes<br>- Provides a fallback UI for errors<br>- Helps in debugging and monitoring errors</td>
+        <td class="style1">Used in wrapping critical UI components to handle unexpected errors gracefully.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">26</td>
+        <td class="style1">Prop Drilling</td>
+        <td class="style1">Passing props through multiple nested components.</td>
+        <td class="style1">- Provides a way to pass data explicitly<br>- Keeps data flow predictable<br>- Works well in small-scale applications</td>
+        <td class="style1">Often used in component trees where global state management is unnecessary.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">27</td>
+        <td class="style1">Higher-Order Components (HOC)</td>
+        <td class="style1">A function that takes a component and returns a new enhanced component.</td>
+        <td class="style1">- Enables code reuse<br>- Helps in abstracting logic<br>- Enhances component modularity</td>
+        <td class="style1">Used in authentication, logging, and permissions-based rendering.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">28</td>
+        <td class="style1">Render Props Pattern</td>
+        <td class="style1">Sharing component logic using a function passed as a prop.</td>
+        <td class="style1">- Improves reusability<br>- Provides more flexibility than HOCs<br>- Helps in separating UI from logic</td>
+        <td class="style1">Used in reusable UI components like tooltips, dropdowns, and carousels.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">29</td>
+        <td class="style1">React Memo</td>
+        <td class="style1">Optimizes performance by memoizing components to prevent unnecessary re-renders.</td>
+        <td class="style1">- Improves efficiency by preventing redundant renders<br>- Helps in optimizing large component trees<br>- Works well with functional components</td>
+        <td class="style1">Used in dashboards, data-heavy UI components, and real-time applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">30</td>
+        <td class="style1">useCallback and useMemo</td>
+        <td class="style1">Performance optimization hooks for memoizing values and functions.</td>
+        <td class="style1">- Prevents unnecessary function recreation<br>- Reduces computation overhead<br>- Improves app responsiveness</td>
+        <td class="style1">Used in optimizing expensive calculations, API calls, and event handlers.</td>
+    </tr>
+        <tr>
+        <td class="style1">31</td>
+        <td class="style1">Context API</td>
+        <td class="style1">Built-in state management for passing data without prop drilling.</td>
+        <td class="style1">- Reduces unnecessary prop drilling<br>- Provides global state management<br>- Works well for theme and authentication state</td>
+        <td class="style1">Used in managing user authentication, theming, and language preferences.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">32</td>
+        <td class="style1">useContext Hook</td>
+        <td class="style1">Accesses React context values without wrapping components manually.</td>
+        <td class="style1">- Simplifies accessing context values<br>- Reduces boilerplate code<br>- Enhances modularization</td>
+        <td class="style1">Used in authentication, state sharing, and global configurations.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">33</td>
+        <td class="style1">Custom Hooks</td>
+        <td class="style1">Reusable logic encapsulated in a function to manage state and effects.</td>
+        <td class="style1">- Improves code reusability<br>- Reduces duplicate logic<br>- Simplifies stateful logic in components</td>
+        <td class="style1">Used in fetching data, form validation, and handling UI state.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">34</td>
+        <td class="style1">React Portals</td>
+        <td class="style1">Allows rendering children into a different part of the DOM tree.</td>
+        <td class="style1">- Useful for modals, tooltips, and popups<br>- Prevents z-index and styling conflicts<br>- Keeps the main component tree clean</td>
+        <td class="style1">Used for modals, dropdowns, and notifications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">35</td>
+        <td class="style1">Fragments</td>
+        <td class="style1">Enables returning multiple elements from a component without an extra wrapper.</td>
+        <td class="style1">- Avoids unnecessary DOM nodes<br>- Improves rendering performance<br>- Keeps the JSX structure clean</td>
+        <td class="style1">Used in lists, tables, and grouped UI elements.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">36</td>
+        <td class="style1">Refs and useRef Hook</td>
+        <td class="style1">Allows accessing and manipulating DOM elements directly.</td>
+        <td class="style1">- Bypasses the normal React rendering cycle<br>- Useful for focus management<br>- Helps in handling animations and form interactions</td>
+        <td class="style1">Used in handling input focus, animations, and video players.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">37</td>
+        <td class="style1">Controlled vs Uncontrolled Components</td>
+        <td class="style1">Controlled components manage state via React, while uncontrolled components use direct DOM manipulation.</td>
+        <td class="style1">- Controlled components ensure React-driven state changes<br>- Uncontrolled components offer simpler form handling<br>- Improves performance in certain scenarios</td>
+        <td class="style1">Used in form handling and user input management.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">38</td>
+        <td class="style1">Forwarding Refs</td>
+        <td class="style1">Allows passing a ref through a component to a child DOM element.</td>
+        <td class="style1">- Enables ref access in higher-order components<br>- Useful for wrapping third-party libraries<br>- Improves interoperability with non-React code</td>
+        <td class="style1">Used in integrating third-party components and handling input focus.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">39</td>
+        <td class="style1">Concurrent Mode</td>
+        <td class="style1">Improves React's rendering performance by prioritizing tasks.</td>
+        <td class="style1">- Improves responsiveness<br>- Prevents UI from blocking due to heavy computations<br>- Enhances user experience in interactive apps</td>
+        <td class="style1">Used in data-heavy applications, dashboards, and real-time updates.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">40</td>
+        <td class="style1">Suspense for Data Fetching</td>
+        <td class="style1">Delays rendering until data is available, improving performance.</td>
+        <td class="style1">- Provides better user experience with fallbacks<br>- Reduces unnecessary re-renders<br>- Enhances application responsiveness</td>
+        <td class="style1">Used in API calls, lazy-loaded components, and data-heavy applications.</td>
+    </tr>
+    <tr>
+        <td class="style1">41</td>
+        <td class="style1">Higher-Order Components (HOC)</td>
+        <td class="style1">A function that takes a component and returns a new enhanced component.</td>
+        <td class="style1">- Improves code reuse<br>- Enables logic abstraction<br>- Useful for authentication and permissions</td>
+        <td class="style1">Used in authentication, logging, and feature toggling.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">42</td>
+        <td class="style1">Render Props</td>
+        <td class="style1">A technique where a function is passed as a prop to control component rendering.</td>
+        <td class="style1">- Allows flexible component behavior<br>- Encourages reusable UI logic<br>- Alternative to HOCs</td>
+        <td class="style1">Used in data fetching, animations, and UI state management.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">43</td>
+        <td class="style1">React.memo()</td>
+        <td class="style1">Optimizes functional components by memoizing their output to avoid unnecessary re-renders.</td>
+        <td class="style1">- Improves performance<br>- Reduces expensive re-renders<br>- Useful for optimizing large lists</td>
+        <td class="style1">Used in performance-heavy apps like dashboards and charts.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">44</td>
+        <td class="style1">useMemo Hook</td>
+        <td class="style1">Memoizes the result of a computation to prevent unnecessary recalculations.</td>
+        <td class="style1">- Optimizes computationally expensive functions<br>- Improves performance in slow UI updates<br>- Works well with large datasets</td>
+        <td class="style1">Used in sorting, filtering, and computing derived state.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">45</td>
+        <td class="style1">useCallback Hook</td>
+        <td class="style1">Returns a memoized callback function to prevent unnecessary re-creations.</td>
+        <td class="style1">- Reduces function re-creation in child components<br>- Improves performance in complex UIs<br>- Useful with React.memo()</td>
+        <td class="style1">Used in event handlers, callbacks, and optimizing child component rendering.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">46</td>
+        <td class="style1">Error Boundaries</td>
+        <td class="style1">Special React components that catch JavaScript errors in child components.</td>
+        <td class="style1">- Prevents entire app crashes<br>- Improves error handling<br>- Displays fallback UI gracefully</td>
+        <td class="style1">Used in critical UI areas like forms, dashboards, and payment flows.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">47</td>
+        <td class="style1">Lazy Loading</td>
+        <td class="style1">Loads components or resources only when needed, improving performance.</td>
+        <td class="style1">- Reduces initial bundle size<br>- Improves loading speed<br>- Enhances user experience</td>
+        <td class="style1">Used in large applications, dynamic imports, and route-based loading.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">48</td>
+        <td class="style1">Code Splitting</td>
+        <td class="style1">Divides JavaScript bundles into smaller pieces to optimize load time.</td>
+        <td class="style1">- Reduces initial load time<br>- Speeds up page interactions<br>- Works well with Webpack and React.lazy</td>
+        <td class="style1">Used in single-page applications (SPA) and large enterprise apps.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">49</td>
+        <td class="style1">Reconciliation</td>
+        <td class="style1">React’s diffing algorithm that updates the Virtual DOM efficiently.</td>
+        <td class="style1">- Minimizes DOM manipulations<br>- Enhances rendering performance<br>- Enables smooth UI updates</td>
+        <td class="style1">Used in animations, dynamic lists, and high-performance applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">50</td>
+        <td class="style1">React Fiber</td>
+        <td class="style1">Modern rendering engine for improved concurrency and performance.</td>
+        <td class="style1">- Enables async rendering<br>- Improves user interactions<br>- Supports Suspense and Concurrent Mode</td>
+        <td class="style1">Used in complex UI updates, animations, and concurrent rendering.</td>
+    </tr>    
+    <tr>
+        <td class="style1">51</td>
+        <td class="style1">React Suspense</td>
+        <td class="style1">Allows components to wait for data fetching before rendering.</td>
+        <td class="style1">- Enhances user experience<br>- Works well with concurrent rendering<br>- Simplifies data loading handling</td>
+        <td class="style1">Used in lazy-loaded components and async data fetching.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">52</td>
+        <td class="style1">React Concurrent Mode</td>
+        <td class="style1">Enables React to work on multiple rendering tasks simultaneously.</td>
+        <td class="style1">- Improves performance in large apps<br>- Allows smooth UI updates<br>- Works well with Suspense</td>
+        <td class="style1">Used in real-time applications and interactive UIs.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">53</td>
+        <td class="style1">React Portals</td>
+        <td class="style1">Allows rendering a component outside its normal parent hierarchy.</td>
+        <td class="style1">- Helps with modals and tooltips<br>- Avoids CSS conflicts<br>- Improves accessibility</td>
+        <td class="style1">Used in popups, modals, and global notifications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">54</td>
+        <td class="style1">React Fragments</td>
+        <td class="style1">Lets you group multiple elements without adding extra DOM nodes.</td>
+        <td class="style1">- Reduces unnecessary div wrappers<br>- Improves DOM structure<br>- Enhances performance</td>
+        <td class="style1">Used in lists, layouts, and grouped components.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">55</td>
+        <td class="style1">Context API vs Redux</td>
+        <td class="style1">Compares built-in Context API with Redux for state management.</td>
+        <td class="style1">- Context API: Simple, lightweight<br>- Redux: Centralized, powerful debugging<br>- Use Context for small apps, Redux for large apps</td>
+        <td class="style1">Used in global state management for apps.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">56</td>
+        <td class="style1">React Hook Rules</td>
+        <td class="style1">Rules that must be followed when using hooks.</td>
+        <td class="style1">- Ensures predictable behavior<br>- Avoids bugs in functional components<br>- Works well with ESLint</td>
+        <td class="style1">Used in all React functional components using hooks.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">57</td>
+        <td class="style1">Prop Drilling</td>
+        <td class="style1">Passing data through multiple components unnecessarily.</td>
+        <td class="style1">- Easy to understand but can get complex<br>- Avoidable using Context API or Redux<br>- Affects code maintainability</td>
+        <td class="style1">Common in deeply nested components, should be optimized.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">58</td>
+        <td class="style1">Server-Side Rendering (SSR)</td>
+        <td class="style1">Pre-renders React components on the server before sending them to the browser.</td>
+        <td class="style1">- Improves SEO<br>- Reduces initial load time<br>- Works well with Next.js</td>
+        <td class="style1">Used in blogs, e-commerce, and dynamic applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">59</td>
+        <td class="style1">Static Site Generation (SSG)</td>
+        <td class="style1">Pre-builds pages at build time, serving them as static files.</td>
+        <td class="style1">- Extremely fast performance<br>- Works without a backend<br>- Best for content-heavy sites</td>
+        <td class="style1">Used in documentation, blogs, and landing pages.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">60</td>
+        <td class="style1">Incremental Static Regeneration (ISR)</td>
+        <td class="style1">Regenerates static pages after deployment without rebuilding the entire site.</td>
+        <td class="style1">- Combines the best of SSR and SSG<br>- Improves real-time content updates<br>- Used with Next.js</td>
+        <td class="style1">Used in frequently updated content like news sites and e-commerce.</td>
+    </tr>
+    <tr>
+        <td class="style1">61</td>
+        <td class="style1">React Router</td>
+        <td class="style1">A client-side routing library for React applications.</td>
+        <td class="style1">- Enables single-page application navigation<br>- Reduces server requests<br>- Supports dynamic routes</td>
+        <td class="style1">Used in multi-page apps, dashboards, and e-commerce sites.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">62</td>
+        <td class="style1">Protected Routes in React</td>
+        <td class="style1">Restrict access to certain routes based on authentication.</td>
+        <td class="style1">- Enhances security<br>- Controls user access<br>- Works with authentication providers</td>
+        <td class="style1">Used in admin panels, member-only pages, and dashboards.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">63</td>
+        <td class="style1">Lazy Loading in React</td>
+        <td class="style1">Delays loading of non-essential components until needed.</td>
+        <td class="style1">- Improves initial load time<br>- Saves bandwidth<br>- Reduces memory usage</td>
+        <td class="style1">Used in large applications, images, and third-party components.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">64</td>
+        <td class="style1">React.memo()</td>
+        <td class="style1">Optimizes functional components by memoizing them.</td>
+        <td class="style1">- Prevents unnecessary re-renders<br>- Improves performance<br>- Works well with useCallback</td>
+        <td class="style1">Used in lists, high-frequency UI updates, and complex components.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">65</td>
+        <td class="style1">React Profiler</td>
+        <td class="style1">A built-in React Developer Tools feature to analyze performance.</td>
+        <td class="style1">- Identifies performance bottlenecks<br>- Helps optimize renders<br>- Easy to use with DevTools</td>
+        <td class="style1">Used in performance debugging and production optimization.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">66</td>
+        <td class="style1">Recoil for State Management</td>
+        <td class="style1">A modern alternative to Redux for managing state in React.</td>
+        <td class="style1">- Simple API<br>- Supports React Concurrent Mode<br>- Minimal boilerplate</td>
+        <td class="style1">Used in scalable applications and real-time collaboration tools.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">67</td>
+        <td class="style1">Zustand for State Management</td>
+        <td class="style1">A lightweight alternative to Redux and Context API.</td>
+        <td class="style1">- Simple API with hooks<br>- Minimal setup<br>- Fast and scalable</td>
+        <td class="style1">Used in games, dashboards, and interactive applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">68</td>
+        <td class="style1">Redux Toolkit</td>
+        <td class="style1">A simplified way to use Redux with best practices.</td>
+        <td class="style1">- Reduces boilerplate<br>- Optimized for performance<br>- Includes middleware support</td>
+        <td class="style1">Used in large-scale applications and real-time data processing.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">69</td>
+        <td class="style1">useEffect Cleanup</td>
+        <td class="style1">Ensures proper cleanup of side effects to prevent memory leaks.</td>
+        <td class="style1">- Avoids unexpected behavior<br>- Frees up resources<br>- Prevents unnecessary re-renders</td>
+        <td class="style1">Used in timers, event listeners, and API calls.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">70</td>
+        <td class="style1">Custom Event Listeners in React</td>
+        <td class="style1">Handling global events like key presses, mouse movements, and scrolling.</td>
+        <td class="style1">- Improves interactivity<br>- Provides better control<br>- Enhances user experience</td>
+        <td class="style1">Used in games, chat applications, and advanced UI components.</td>
+    </tr>
+        <tr>
+        <td class="style1">71</td>
+        <td class="style1">React Portals</td>
+        <td class="style1">Allows rendering components outside of their parent DOM hierarchy.</td>
+        <td class="style1">- Avoids CSS conflicts<br>- Useful for modals and tooltips<br>- Provides better control over z-index</td>
+        <td class="style1">Used in modal dialogs, popups, and global notifications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">72</td>
+        <td class="style1">useReducer Hook</td>
+        <td class="style1">A React Hook for managing complex state logic.</td>
+        <td class="style1">- Better structure for complex state updates<br>- Works well with Context API<br>- Alternative to Redux for small apps</td>
+        <td class="style1">Used in forms, authentication flows, and game state management.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">73</td>
+        <td class="style1">WebSockets in React</td>
+        <td class="style1">Enables real-time communication between the client and server.</td>
+        <td class="style1">- Low latency updates<br>- Reduces unnecessary HTTP requests<br>- Works well for live data</td>
+        <td class="style1">Used in chat apps, stock market dashboards, and live notifications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">74</td>
+        <td class="style1">Service Workers in React</td>
+        <td class="style1">Allows caching assets and enabling offline mode.</td>
+        <td class="style1">- Improves performance<br>- Supports offline functionality<br>- Reduces server load</td>
+        <td class="style1">Used in Progressive Web Apps (PWAs) and offline-first apps.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">75</td>
+        <td class="style1">React Context API vs Redux</td>
+        <td class="style1">Comparison between built-in state management and Redux.</td>
+        <td class="style1">- Context API is simpler for small apps<br>- Redux is more scalable and structured<br>- Context API is built-in, Redux requires setup</td>
+        <td class="style1">Context API for small apps, Redux for large-scale enterprise apps.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">76</td>
+        <td class="style1">Optimizing React with useMemo</td>
+        <td class="style1">Memoizes expensive calculations in components.</td>
+        <td class="style1">- Improves performance<br>- Prevents unnecessary recalculations<br>- Works well with useCallback</td>
+        <td class="style1">Used in filtering large lists and handling expensive computations.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">77</td>
+        <td class="style1">Progressive Web Apps (PWA) with React</td>
+        <td class="style1">Building web applications that work like native apps.</td>
+        <td class="style1">- Offline support<br>- Fast and responsive<br>- Can be installed on mobile devices</td>
+        <td class="style1">Used in e-commerce, social media, and news applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">78</td>
+        <td class="style1">React Error Boundaries</td>
+        <td class="style1">Handles component-level errors gracefully.</td>
+        <td class="style1">- Prevents full app crashes<br>- Improves user experience<br>- Logs errors effectively</td>
+        <td class="style1">Used in production apps to handle component failures.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">79</td>
+        <td class="style1">React and WebAssembly</td>
+        <td class="style1">Integrating WebAssembly modules for performance-heavy tasks.</td>
+        <td class="style1">- Runs near-native speed<br>- Enables complex computations<br>- Works well with C++ and Rust</td>
+        <td class="style1">Used in image processing, game engines, and scientific applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">80</td>
+        <td class="style1">Three.js with React</td>
+        <td class="style1">Integrating 3D graphics into React applications.</td>
+        <td class="style1">- Enables WebGL support<br>- Supports interactive 3D elements<br>- Works well with React Fiber</td>
+        <td class="style1">Used in gaming, data visualization, and virtual reality applications.</td>
+    </tr>
+        <tr>
+        <td class="style1">81</td>
+        <td class="style1">React and GraphQL</td>
+        <td class="style1">Using GraphQL as an alternative to REST APIs.</td>
+        <td class="style1">- Reduces over-fetching data<br>- Optimized queries<br>- Better control over API responses</td>
+        <td class="style1">Used in large-scale applications with complex data relationships.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">82</td>
+        <td class="style1">React and WebRTC</td>
+        <td class="style1">Enabling peer-to-peer video and audio communication.</td>
+        <td class="style1">- Low-latency real-time communication<br>- Works without intermediaries<br>- Secure and efficient</td>
+        <td class="style1">Used in video conferencing, live streaming, and chat applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">83</td>
+        <td class="style1">React Fragments</td>
+        <td class="style1">Avoids unnecessary div wrappers in JSX.</td>
+        <td class="style1">- Improves DOM structure<br>- Reduces memory usage<br>- Cleaner HTML output</td>
+        <td class="style1">Used in reusable UI components without affecting the DOM hierarchy.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">84</td>
+        <td class="style1">React Transition Group</td>
+        <td class="style1">Provides animations for components.</td>
+        <td class="style1">- Smooth UI transitions<br>- Easy integration with CSS animations<br>- Enhances user experience</td>
+        <td class="style1">Used in modals, popups, and dynamic UI elements.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">85</td>
+        <td class="style1">React Profiler</td>
+        <td class="style1">Tool for measuring rendering performance.</td>
+        <td class="style1">- Detects performance bottlenecks<br>- Optimizes component rendering<br>- Works with React DevTools</td>
+        <td class="style1">Used in debugging performance issues in complex applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">86</td>
+        <td class="style1">React and IndexedDB</td>
+        <td class="style1">Using browser-based storage for large amounts of structured data.</td>
+        <td class="style1">- Supports offline data persistence<br>- Works with NoSQL storage<br>- Scales better than localStorage</td>
+        <td class="style1">Used in offline-first apps like document editors and financial dashboards.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">87</td>
+        <td class="style1">React and Firebase</td>
+        <td class="style1">Integrating Firebase for authentication and database management.</td>
+        <td class="style1">- Easy backend setup<br>- Real-time database support<br>- Scalable cloud functions</td>
+        <td class="style1">Used in authentication systems, chat apps, and real-time data sync.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">88</td>
+        <td class="style1">React and Web Components</td>
+        <td class="style1">Combining React with native Web Components.</td>
+        <td class="style1">- Reusable UI components across frameworks<br>- Improved encapsulation<br>- Works with modern browsers</td>
+        <td class="style1">Used in design systems, widget development, and micro frontends.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">89</td>
+        <td class="style1">React and OpenAI API</td>
+        <td class="style1">Integrating AI models like GPT into React applications.</td>
+        <td class="style1">- AI-powered chatbots<br>- Content generation automation<br>- Personalized user experience</td>
+        <td class="style1">Used in chatbots, automated assistants, and AI-driven applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">90</td>
+        <td class="style1">React with Electron</td>
+        <td class="style1">Building cross-platform desktop applications using React.</td>
+        <td class="style1">- Supports Windows, macOS, and Linux<br>- Uses web technologies for UI<br>- Can integrate with OS-level APIs</td>
+        <td class="style1">Used in desktop apps like VS Code, Slack, and Discord.</td>
+    </tr>
+     <tr>
+        <td class="style1">91</td>
+        <td class="style1">React with PWA (Progressive Web Apps)</td>
+        <td class="style1">Building web apps that offer native app-like experiences.</td>
+        <td class="style1">- Offline support<br>- Push notifications<br>- Better performance on mobile</td>
+        <td class="style1">Used for news apps, e-commerce, and social media platforms.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">92</td>
+        <td class="style1">React and WebAssembly</td>
+        <td class="style1">Using WebAssembly for high-performance computation in React.</td>
+        <td class="style1">- Faster execution than JavaScript<br>- Enables low-level programming in React<br>- Supports languages like Rust and C++</td>
+        <td class="style1">Used in game development, video processing, and complex simulations.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">93</td>
+        <td class="style1">React with Redux Toolkit</td>
+        <td class="style1">Using Redux Toolkit for efficient state management.</td>
+        <td class="style1">- Simplifies Redux setup<br>- Reduces boilerplate code<br>- Optimized for large-scale apps</td>
+        <td class="style1">Used in enterprise-level applications requiring global state management.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">94</td>
+        <td class="style1">React and SVG Animations</td>
+        <td class="style1">Adding SVG animations to enhance UI/UX.</td>
+        <td class="style1">- Scalable graphics<br>- Smoother animations<br>- Better performance than GIFs</td>
+        <td class="style1">Used in data visualization, dashboards, and interactive elements.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">95</td>
+        <td class="style1">React with Tailwind CSS</td>
+        <td class="style1">Using Tailwind CSS for utility-first styling in React.</td>
+        <td class="style1">- Faster styling process<br>- Reduces CSS file size<br>- Highly customizable</td>
+        <td class="style1">Used in modern UI development with a focus on performance.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">96</td>
+        <td class="style1">React with Three.js</td>
+        <td class="style1">Creating 3D graphics in React applications.</td>
+        <td class="style1">- GPU-accelerated rendering<br>- Interactive 3D models<br>- High-performance graphics</td>
+        <td class="style1">Used in gaming, VR/AR applications, and data visualization.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">97</td>
+        <td class="style1">React with Micro Frontends</td>
+        <td class="style1">Splitting a large UI into independently deployable modules.</td>
+        <td class="style1">- Scales frontend development<br>- Enables independent deployments<br>- Improves maintainability</td>
+        <td class="style1">Used in enterprise-level applications with multiple teams working on different UI parts.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">98</td>
+        <td class="style1">React with Storybook</td>
+        <td class="style1">Developing and testing UI components in isolation.</td>
+        <td class="style1">- Faster UI development<br>- Component documentation<br>- Simplifies visual testing</td>
+        <td class="style1">Used in large-scale component libraries and design systems.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">99</td>
+        <td class="style1">React with Zustand</td>
+        <td class="style1">Using Zustand as a lightweight alternative to Redux.</td>
+        <td class="style1">- Simpler state management<br>- Minimal boilerplate<br>- Fast and scalable</td>
+        <td class="style1">Used in smaller applications or where Redux is overkill.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">100</td>
+        <td class="style1">React with WebSockets</td>
+        <td class="style1">Enabling real-time bidirectional communication.</td>
+        <td class="style1">- Reduces latency<br>- Enables live updates<br>- Efficient for real-time apps</td>
+        <td class="style1">Used in chat applications, financial dashboards, and collaborative tools.</td>
+    </tr>
+    <tr>
+        <td class="style1">101</td>
+        <td class="style1">React with WebRTC</td>
+        <td class="style1">Implementing real-time video and audio communication in React.</td>
+        <td class="style1">- Peer-to-peer communication<br>- Low-latency streaming<br>- Secure and scalable</td>
+        <td class="style1">Used in video conferencing, telehealth, and online tutoring apps.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">102</td>
+        <td class="style1">React with Firebase</td>
+        <td class="style1">Integrating Firebase for backend-as-a-service (BaaS) solutions.</td>
+        <td class="style1">- Serverless backend<br>- Real-time database support<br>- Scalable authentication</td>
+        <td class="style1">Used in chat apps, authentication systems, and cloud storage.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">103</td>
+        <td class="style1">React with GraphQL Subscriptions</td>
+        <td class="style1">Implementing real-time updates using GraphQL subscriptions.</td>
+        <td class="style1">- Efficient real-time data fetching<br>- Reduces over-fetching<br>- Scalable for large applications</td>
+        <td class="style1">Used in live dashboards, collaborative apps, and notifications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">104</td>
+        <td class="style1">React and Electron</td>
+        <td class="style1">Building cross-platform desktop applications using Electron.</td>
+        <td class="style1">- Cross-platform support<br>- Full access to OS features<br>- Uses web technologies</td>
+        <td class="style1">Used in Slack, VS Code, and desktop productivity tools.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">105</td>
+        <td class="style1">React with Vite</td>
+        <td class="style1">Using Vite for a fast and efficient development environment.</td>
+        <td class="style1">- Super fast hot module replacement (HMR)<br>- Optimized build process<br>- Faster project startup</td>
+        <td class="style1">Used in modern front-end development for better DX (developer experience).</td>
+    </tr>
+
+    <tr>
+        <td class="style1">106</td>
+        <td class="style1">React with RxJS</td>
+        <td class="style1">Managing complex asynchronous data streams in React.</td>
+        <td class="style1">- Handles complex async operations<br>- Reactive programming paradigm<br>- Improves performance</td>
+        <td class="style1">Used in stock market apps, chat apps, and real-time analytics.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">107</td>
+        <td class="style1">React with Headless CMS</td>
+        <td class="style1">Using headless CMS (like Contentful) to manage content in React apps.</td>
+        <td class="style1">- Decouples frontend from backend<br>- Scalable and API-driven<br>- Great for JAMstack</td>
+        <td class="style1">Used in blogs, e-commerce, and news portals.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">108</td>
+        <td class="style1">React with OpenAI API</td>
+        <td class="style1">Integrating AI-based solutions in React apps.</td>
+        <td class="style1">- Enables AI-driven interactions<br>- Enhances user experience<br>- Automates processes</td>
+        <td class="style1">Used in chatbots, AI content generation, and virtual assistants.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">109</td>
+        <td class="style1">React with Blockchain</td>
+        <td class="style1">Developing decentralized applications (dApps) with React.</td>
+        <td class="style1">- Secure transactions<br>- Decentralized storage<br>- Smart contract integration</td>
+        <td class="style1">Used in cryptocurrency wallets, NFTs, and DeFi applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">110</td>
+        <td class="style1">React with TensorFlow.js</td>
+        <td class="style1">Running machine learning models in the browser using React.</td>
+        <td class="style1">- On-device AI processing<br>- No need for backend servers<br>- Real-time ML inference</td>
+        <td class="style1">Used in face recognition, pose estimation, and AI-powered UI.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">111</td>
+        <td class="style1">React with Web Workers</td>
+        <td class="style1">Running heavy computations in the background using Web Workers.</td>
+        <td class="style1">- Improves app performance<br>- Offloads heavy tasks from main thread<br>- Non-blocking execution</td>
+        <td class="style1">Used in large data processing, encryption, and video editing apps.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">112</td>
+        <td class="style1">React with Service Workers</td>
+        <td class="style1">Improving offline support and caching strategies.</td>
+        <td class="style1">- Enables offline mode<br>- Improves page load speeds<br>- Reduces server load</td>
+        <td class="style1">Used in PWA, caching strategies, and offline-first applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">113</td>
+        <td class="style1">React with Recoil</td>
+        <td class="style1">A new lightweight state management solution for React.</td>
+        <td class="style1">- Simpler than Redux<br>- Atomic state updates<br>- Minimal boilerplate</td>
+        <td class="style1">Used in medium to large apps where Redux is too complex.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">114</td>
+        <td class="style1">React with Formik</td>
+        <td class="style1">Handling complex forms efficiently in React.</td>
+        <td class="style1">- Reduces form boilerplate<br>- Built-in validation<br>- Works with Yup schema validation</td>
+        <td class="style1">Used in large-scale forms like user registration and surveys.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">115</td>
+        <td class="style1">React with Lodash</td>
+        <td class="style1">Using Lodash for optimized utility functions in React.</td>
+        <td class="style1">- Improves code efficiency<br>- Provides powerful array and object utilities<br>- Reduces rework</td>
+        <td class="style1">Used in data transformation and API data processing.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">116</td>
+        <td class="style1">React with Web Bluetooth API</td>
+        <td class="style1">Connecting React apps with Bluetooth devices.</td>
+        <td class="style1">- Enables IoT integrations<br>- Supports real-time device communication<br>- Low latency</td>
+        <td class="style1">Used in fitness trackers, healthcare devices, and smart home applications.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">117</td>
+        <td class="style1">React with Jotai</td>
+        <td class="style1">Using Jotai for atomic state management.</td>
+        <td class="style1">- Lightweight state management<br>- Fine-grained reactivity<br>- No boilerplate</td>
+        <td class="style1">Used in small and medium-sized projects that need local state management.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">118</td>
+        <td class="style1">React with Zustand</td>
+        <td class="style1">Using Zustand as an alternative to Redux.</td>
+        <td class="style1">- Minimalistic global state<br>- No boilerplate needed<br>- Simple and scalable</td>
+        <td class="style1">Used in lightweight apps and React Native projects.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">119</td>
+        <td class="style1">React with Rive</td>
+        <td class="style1">Adding interactive vector animations with Rive.</td>
+        <td class="style1">- Optimized animations<br>- Cross-platform support<br>- Lightweight assets</td>
+        <td class="style1">Used in UI/UX design, gaming, and interactive elements.</td>
+    </tr>
+
+    <tr>
+        <td class="style1">120</td>
+        <td class="style1">React with Motion One</td>
+        <td class="style1">Using Motion One for animations in React.</td>
+        <td class="style1">- High-performance animations<br>- Declarative syntax<br>- CSS-powered</td>
+        <td class="style1">Used in modern web UI animations and interactive effects.</td>
+    </tr>
+</table>
+</body>
+</html>
