@@ -9,6 +9,7 @@ import HelloWorldFunctional from "./components/T001/HelloWorldFunctional";
 import FunctionalComponentExample from "./components/T002/FunctionalComponentExample";
 import Counter from "./components/T004/Counter";  // Import the class component
 import UserCard from "./components/T005/UserCard";  // Importing the child component
+import UserCard2 from "./components/T006/UserCard2"; // Importing the class-based component
 
 
 
@@ -38,6 +39,12 @@ function App() {
       <UserCard name="Bob Smith" age={34} email="bob@example.com" />
       <UserCard name="Charlie Brown" age={22} email="charlie@example.com" />
       <UserCard /> {/* Uses default props */}
+      <h1>T006 User Profiles</h1>
+        {/* Passing props to the child component */}
+        <UserCard2 name="Alice Johnson" age={28} email="alice@example.com" />
+        <UserCard2 name="Bob Smith" age={34} email="bob@example.com" />
+        <UserCard2 name="Charlie Brown" age={22} email="charlie@example.com" />
+        <UserCard2 /> {/* Uses default props */}
 
 
         {/* Link to the official React documentation with security attributes */}
